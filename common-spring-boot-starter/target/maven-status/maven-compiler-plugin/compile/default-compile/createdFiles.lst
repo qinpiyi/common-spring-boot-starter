@@ -1,0 +1,9 @@
+com\qinpiyi\common\service\BaseServiceImpl.class
+com\qinpiyi\common\response\CommonResponseUtil.class
+com\qinpiyi\common\service\QueryService.class
+com\qinpiyi\common\controller\QueryController.class
+com\qinpiyi\common\service\QueryServiceImpl.class
+com\qinpiyi\common\mapper\MyBatisMapper.class
+com\qinpiyi\common\controller\BaseController.class
+com\qinpiyi\common\service\BaseService.class
+com\qinpiyi\common\response\CommonResponse.class
