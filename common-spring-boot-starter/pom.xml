@@ -6,7 +6,7 @@
 
     <groupId>com.qinpiyi.common</groupId>
     <artifactId>common-spring-boot-starter</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.4</version>
     <packaging>jar</packaging>
     <name>common-spring-boot-starter</name>
     <description>Common Utils for Spring Boot</description>
@@ -46,11 +46,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
-        <!-- mysql的连接驱动 -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.11</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
         <!-- mybatis的springboot起步依赖 -->
         <dependency>
@@ -61,9 +60,8 @@
         <!-- 通用mapper插件 -->
         <dependency>
             <groupId>tk.mybatis</groupId>
-            <artifactId>mapper</artifactId>
-            <version>4.0.4</version>
-            <scope>compile</scope>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version>
         </dependency>
         <!-- mybatis分页插件 -->
         <dependency>
@@ -71,7 +69,22 @@
             <artifactId>pagehelper</artifactId>
             <version>5.1.2</version>
         </dependency>
-
+        <!-- jpa-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- mysql的连接驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
 
         <!-- swagger2 -->
         <dependency>
@@ -84,6 +97,14 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.7.0</version>
         </dependency>
+
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

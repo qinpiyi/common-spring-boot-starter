@@ -1,4 +1,3 @@
-D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\mapper\MyBatisMapper.java
 D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\service\BaseServiceImpl.java
 D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\service\QueryServiceImpl.java
 D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\service\QueryService.java
@@ -7,3 +6,4 @@ D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\ma
 D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\response\CommonResponse.java
 D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\service\BaseService.java
 D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\controller\BaseController.java
+D:\workspaces\git\qpy-common-spring-boot-start\common-spring-boot-starter\src\main\java\com\qinpiyi\common\mapper\MyBaseMapper.java

@@ -2,16 +2,16 @@ package com.qinpiyi.common.service;
 
 import java.util.List;
 
+import com.qinpiyi.common.mapper.MyBaseMapper;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.pagehelper.PageInfo;
-import com.qinpiyi.common.mapper.MyBatisMapper;
 
 public class QueryServiceImpl<T> {
 
 	@Autowired
-	protected MyBatisMapper<T> mapper;
+	protected MyBaseMapper<T> mapper;
 
 	public int countByExample(Object example) {
 		return mapper.selectCountByExample(example);

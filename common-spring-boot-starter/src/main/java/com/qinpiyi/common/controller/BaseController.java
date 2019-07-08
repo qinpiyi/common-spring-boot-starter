@@ -20,37 +20,26 @@ public class BaseController<T> extends QueryController<T> {
 
 	/**
 	 * 批量更新对象
-	 * 
-	 * @param request
-	 * @param objs
-	 * @return
 	 */
 	@ApiOperation(value = "批量更新对象")
-	@PostMapping(value = "/submit")
-	public CommonResponse update(HttpServletRequest request, @RequestBody List<T> objs) {
+	@PostMapping(value = "/batchUpdate")
+	public CommonResponse batchUpdate(HttpServletRequest request, @RequestBody List<T> objs) {
 		baseService.batchUpdate(objs);
-		return CommonResponseUtil.success("更新成功");
+		return CommonResponseUtil.success(objs,"更新成功");
 	}
 
 	/**
 	 * 批量删除
-	 * 
-	 * @param request
-	 * @param dto
-	 * @return
 	 */
 	@ApiOperation(value = "批量删除", notes = "根据对象集合批量删除")
 	@PostMapping(value = "/remove")
 	public CommonResponse delete(HttpServletRequest request, @RequestBody List<T> dto) {
 		baseService.batchDelete(dto);
-		return CommonResponseUtil.success("删除成功");
+		return CommonResponseUtil.success(dto,"删除成功");
 	}
 
 	/**
 	 * 批量删除
-	 * 
-	 * @param request
-	 * @return
 	 */
 	@ApiOperation(value = "批量删除", notes = "根据ID集合批量删除")
 	@PostMapping(value = "/removeByIds")
@@ -58,54 +47,31 @@ public class BaseController<T> extends QueryController<T> {
 		for (Long id : ids) {
 			baseService.deleteByPrimaryKey(id);
 		}
-		return CommonResponseUtil.success("删除成功");
+		return CommonResponseUtil.success(ids,"删除成功");
 	}
 
 	/**
 	 * 删除
-	 * 
-	 * @param request
-	 * @return
 	 */
 	@ApiOperation(value = "删除")
 	@PostMapping(value = "/removeById")
 	public CommonResponse deleteById(HttpServletRequest request, Long id) {
 		baseService.deleteByPrimaryKey(id);
-		return CommonResponseUtil.success("删除成功");
+		return CommonResponseUtil.success(id,"删除成功");
 	}
 
 	/**
 	 * 保存或更新.
-	 * 
-	 * @param String
-	 * @param json
-	 * @return String
 	 */
 	@ApiOperation(value = "保存或更新")
 	@PostMapping(value = "/saveOrUpdateOne")
 	public CommonResponse saveOrUpdateOne(@RequestBody T entity) {
-		try {
-			Field fieldnum = entity.getClass().getDeclaredField("id");
-			fieldnum.setAccessible(true);
-			Object id = fieldnum.get(entity);
-			if (id == null || "0".equals(id.toString())) {
-				baseService.insertSelective(entity);
-			} else {
-				baseService.updateByPrimaryKeySelective(entity);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			CommonResponseUtil.exception(e.getMessage());
-		}
-		return CommonResponseUtil.success(entity);
+
+		return saveOrUpdate(entity);
 	}
 
 	/**
-	 * 保存或更新.
-	 * 
-	 * @param String
-	 * @param json
-	 * @return String
+	 * 保存或更新
 	 */
 	@ApiOperation(value = "保存或更新")
 	@PostMapping(value = "/saveOrUpdate")
@@ -127,11 +93,7 @@ public class BaseController<T> extends QueryController<T> {
 	}
 
 	/**
-	 * 保存.
-	 * 
-	 * @param String
-	 * @param json
-	 * @return String
+	 * 保存
 	 */
 	@ApiOperation(value = "保存")
 	@PostMapping(value = "/save")
@@ -149,11 +111,7 @@ public class BaseController<T> extends QueryController<T> {
 	}
 
 	/**
-	 * 更新.
-	 * 
-	 * @param String
-	 * @param json
-	 * @return String
+	 * 更新
 	 */
 	@ApiOperation(value = "更新")
 	@PostMapping(value = "/update")

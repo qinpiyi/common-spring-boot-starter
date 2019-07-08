@@ -25,10 +25,9 @@ public class QueryController<T> {
 	/**
 	 * 分页查询.
 	 * 
-	 * @param page
-	 * @param pagesize
+	 * @param pageNum
+	 * @param pageSize
 	 * @param request
-	 * @return
 	 */
 	@ApiOperation(value = "分页查询", notes = "返回CommonResponse")
 	@RequestMapping(value = "/queryByPage", method = { RequestMethod.GET })
@@ -47,10 +46,9 @@ public class QueryController<T> {
 	/**
 	 * 分页查询.
 	 * 
-	 * @param page
-	 * @param pagesize
+	 * @param pageNum
+	 * @param pageSize
 	 * @param request
-	 * @return
 	 */
 	@ApiOperation(value = "分页查询", notes = "返回PageInfo<T>")
 	@RequestMapping(value = "/queryPage", method = { RequestMethod.GET })
@@ -71,7 +69,6 @@ public class QueryController<T> {
 	 * 
 	 * @param id
 	 * @param request
-	 * @return
 	 */
 	@ApiOperation(value = "根据ID查询对象")
 	@RequestMapping(value = "/queryById", method = { RequestMethod.GET })
@@ -83,9 +80,8 @@ public class QueryController<T> {
 	/**
 	 * 查询列表.
 	 * 
-	 * @param dto
+	 * @param entity
 	 * @param request
-	 * @return
 	 * @throws Exception
 	 */
 	@ApiOperation(value = "查询列表", notes = "不分页")

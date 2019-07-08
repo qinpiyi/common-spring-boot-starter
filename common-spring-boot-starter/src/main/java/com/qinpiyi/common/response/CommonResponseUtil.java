@@ -16,7 +16,6 @@ public class CommonResponseUtil {
 	 * 成功请求,建议使用CommonResponse success(String msg, Object data)
 	 * 
 	 * @param data
-	 * @return
 	 */
 	public static CommonResponse success(Object data, String msg) {
 		CommonResponse res = new CommonResponse();
@@ -50,7 +49,6 @@ public class CommonResponseUtil {
 	 * 成功失败,建议使用CommonResponse fail(String msg, Object data)
 	 * 
 	 * @param data
-	 * @return
 	 */
 	public static CommonResponse fail(Object data, String msg) {
 		CommonResponse res = new CommonResponse();
@@ -84,7 +82,6 @@ public class CommonResponseUtil {
 	 * 请求抛出异常
 	 * 
 	 * @param msg
-	 * @return
 	 */
 	public static CommonResponse exception(String msg) {
 		CommonResponse res = new CommonResponse();
@@ -105,7 +102,6 @@ public class CommonResponseUtil {
 	 * 
 	 * @param code
 	 * @param msg
-	 * @return
 	 */
 	public static CommonResponse custom(Integer code, String msg) {
 		CommonResponse res = new CommonResponse();
